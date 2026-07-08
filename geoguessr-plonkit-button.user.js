@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         GeoGuessr → Plonk It ボタン
+// @name         One Button Plonk It
 // @namespace    https://example.com/geoguessr-plonkit
 // @version      9.2
-// @description  ラウンド終了後(結果画面)だけボタンを表示し、国名も表示した状態でPlonk Itページを開ける学習用ツール(通信不要のオフライン国境判定版)
+// @description  ラウンド終了後(結果画面)だけボタンを表示し、国名も表示した状態でPlonk Itページを開ける学習用ツール
 // @match        https://www.geoguessr.com/*
 // @grant        unsafeWindow
 // @run-at       document-end
