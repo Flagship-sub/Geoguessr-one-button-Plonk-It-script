@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GeoGuessr → Plonk It ボタン
 // @namespace    https://example.com/geoguessr-plonkit
-// @version      9.1
+// @version      9.2
 // @description  ラウンド終了後(結果画面)だけボタンを表示し、国名も表示した状態でPlonk Itページを開ける学習用ツール(通信不要のオフライン国境判定版)
 // @match        https://www.geoguessr.com/*
 // @grant        unsafeWindow
@@ -94,14 +94,6 @@
     hideButton();
   }
 
-  function onGameEnd() {
-    LOG('game_end を検知、ボタンを隠します');
-    state.lastLat = null;
-    state.lastLng = null;
-    state.lastCountry = null;
-    hideButton();
-  }
-
   function waitForFrameworkAndSubscribe(retriesLeft) {
     const GEF = pageWindow.GeoGuessrEventFramework;
     if (!GEF) {
@@ -121,7 +113,6 @@
       }
       target.addEventListener('round_start', onRoundStart);
       target.addEventListener('round_end', onRoundEnd);
-      target.addEventListener('game_end', onGameEnd);
       LOG('GeoGuessrEventFramework の購読を開始しました。');
     }).catch((e) => LOG('init() でエラー:', e));
   }
